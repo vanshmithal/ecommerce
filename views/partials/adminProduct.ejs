@@ -1,0 +1,32 @@
+<form
+  hidden
+  id="<%= data._id%>2"
+  method="POST"
+  action="/admin/product/<%= data._id%>"
+>
+  <input hidden name="delete" value="delete" />
+</form>
+<form
+  id="<%= data._id%>"
+  class="item-card"
+  method="POST"
+  action="/admin/product/<%= data._id%>"
+  enctype="multipart/form-data"
+>
+  Name: <input required name="name" value="<%= data.name %>" />
+
+  Price: <input required name="price" value="<%= data.price %>" />
+
+  Description:
+  <input required name="description" value="<%= data.description %>" />
+
+  Quantity:
+  <input required name="quantity" type="number" value="<%= data.quantity %>" />
+
+  Image: <input name="productImg" type="file" />
+
+  <img src="../<%= data.image%>" class="tile-img" alt="image of product" />
+
+  <input type="submit" value="Delete" form="<%= data._id%>2" />
+  <input type="submit" value="Update" form="<%= data._id%>" />
+</form>

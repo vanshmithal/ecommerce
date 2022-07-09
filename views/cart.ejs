@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title> Ecommerce App Cart </title>
+    <link rel='stylesheet' href='cart/styles.css'>
+  </head>
+  <body>
+
+    <div class='header'>
+      <%- include('./partials/header.ejs', {data: userDetails, admin: false })%>
+    </div>
+    
+    <h2>Your Shopping Cart</h2>
+
+    <form method="GET" action="/" class='view-cart' >
+      <input type="submit" value="Products Page" />
+    </form>
+
+    <div class='cont'>
+    <% for( var i=0; i<userDetails.cartItems.length; i++){ %>
+      <div class='item-card' key='<%= userDetails.cartItems[i]._id%>'>
+        <img src='<%= userDetails.cartItems[i].image %>' class='tile-img'/>
+        <p><%= userDetails.cartItems[i].name %></p>
+        <p>Price: Rs.<%= userDetails.cartItems[i].price %></p>
+        <p>Quantity: <button class='minus-qty'>-</button> <sub><%= userDetails.cartItems[i].quantity %></sub> <button class='plus-qty'>+</button> </p>
+        <button class='view-details delete-item'>Delete</button>
+        <button class='view-details view-item' key='<%= userDetails.cartItems[i].pId%>' >View Details</button>
+      </div>
+    <% } %>
+    </div>
+
+    <div class='popup hidden'></div>
+  
+  </body>
+  <script src='cart/script.js' ></script>
+
+</html>

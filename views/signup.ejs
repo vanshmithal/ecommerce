@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title> Ecommerce App Signup </title>
+    <link rel='stylesheet' href='<%= props.init ? '' : 'signup/' %>styles.css'>
+  </head>
+  <body>
+    
+    <div>
+
+      <h1>Signup Page</h1>
+
+      <form method="POST" action="/signup" enctype="multipart/form-data">
+        <input autofocus required type="text" name="username" placeholder="Enter Username: " />
+        <input required id='pass' type="password" name="password" placeholder="Enter Password" />
+        <input required type="file" name="profilePic" />
+        
+        <div>
+          <sub id='error'> <%= props.error %> </sub>
+        </div>
+        
+        <input id='submit' type="submit" value="Register" />
+      </form>
+
+      <div>
+        <p>Already have and account? <button id='btn' >Login</button> </p>
+      </div>
+
+    </div>
+  
+  </body>
+  <script src='<%= props.init ? '' : 'signup/' %>script.js' ></script>
+</html>

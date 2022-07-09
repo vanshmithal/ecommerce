@@ -1,0 +1,17 @@
+<h1>Welcome To Ecommerce</h1>
+<div>
+  <p><%= data.username %></p>
+  <% if(data.username === 'Guest') { %>
+  <form method="GET" action="/login">
+    <input type="submit" value="Login" />
+  </form>
+  <% } else { %> <img src= '<%= admin ? '../' : '' %><%= data.profilePic%>'
+  class="profile-pic" alt='profile pic' />
+  <form method="GET" action="/resetPassword/<%= data._id %>">
+    <input type="submit" value="Reset Password" />
+  </form>
+  <form method="GET" action="/signout">
+    <input type="submit" value="Log Out" />
+  </form>
+  <% } %>
+</div>

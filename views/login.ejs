@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title> Ecommerce App Login </title>
+    <link rel='stylesheet' href='<%= props.init ? '' : 'login/' %>styles.css'>
+  </head>
+  <body>
+    
+    <div>
+
+      <h1>Login Page</h1>
+
+      <form method="POST" action="/login">
+        <input <%= props.username ? '' : 'autofocus' %> required type="text" name="username" placeholder="Enter Username: " value="<%= props.username ? props.username : '' %>" />
+        <input <%= props.username ? 'autofocus' : '' %> required type="password" name="password" placeholder="Enter Password" />
+        
+        <% if(props.success) { %>
+          <div>
+            <sub class='success'> <%= props.success %> </sub>
+          </div>
+        <% } %>
+
+        <% if(props.error) { %>
+          <div>
+            <sub class='error'> <%= props.error %> </sub>
+          </div>
+        <% } %>
+        
+        <input type="submit" value="Login" />
+      </form>
+
+      <form method='GET' action='/forgotPassword' >
+        <input type='submit' value='Forgot Password?' />
+      </form>
+
+      <div>
+        <p>Don't have and account? <button id='btn' >Signup</button> </p>
+      </div>
+
+    </div>
+  
+  </body>
+  <script src='<%= props.init ? '' : 'login/' %>script.js' ></script>
+</html>

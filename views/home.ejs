@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Ecommerce App Home</title>
+    <link rel="stylesheet" href="home/styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <%- include('./partials/header.ejs', {data: props.user, admin: false })%>
+    </div>
+
+    <h2>Today's Super Deals</h2>
+
+    <form method="GET" action="/shoppingCart" class="view-cart">
+      <input type="submit" value="View Cart" />
+      <sub id="cartLength">0</sub>
+    </form>
+
+    <div class="cont"></div>
+
+    <div class="loadMore">
+      <button id="loadMore">Load More...</button>
+    </div>
+
+    <div class="popup hidden">
+      <div>
+        <button id="popup-btn">X</button>
+      </div>
+    </div>
+  </body>
+  <script src="home/script.js"></script>
+</html>

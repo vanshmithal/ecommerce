@@ -1,0 +1,42 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+
+body > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+}
+
+form {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  background-color: transparent;
+  font-size: 18px;
+  border: 0;
+  padding: 30px;
+}
+
+input:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}

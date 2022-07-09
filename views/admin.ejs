@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Ecommerce App Admin</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <%- include('./partials/header.ejs', {data: userDetails, admin: true })%>
+    </div>
+
+    <h2>Admin Controls</h2>
+
+    <form
+      action="/admin/product"
+      method="POST"
+      enctype="multipart/form-data"
+      class="item-card"
+    >
+      Name:
+      <input type="text" name="name" placeholder="Enter Product Name: " />
+      Price:
+      <input type="text" name="price" placeholder="Enter Product Price: " />
+      Description:
+      <input
+        type="text"
+        name="description"
+        placeholder="Enter Product Description: "
+      />
+      Quantity:
+      <input
+        type="number"
+        name="quantity"
+        placeholder="Enter Product Quantity: "
+      />
+      Image: <input type="file" name="productImg" />
+      <input type="submit" value="Add Product" />
+    </form>
+
+    <div class="cont">
+      <% products.forEach( p => { %> <%- include('./partials/adminProduct.ejs',
+      {data: p}) %> <% }) %>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>Ecommerce App Forgot Password</title>
+    <link rel="stylesheet" href="login/styles.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Forgot Password Page</h1>
+
+      <form method="POST" action="/forgotPassword">
+        <input
+          autofocus
+          required
+          type="text"
+          name="username"
+          placeholder="Enter Username: "
+        />
+
+        <% if(success) { %>
+        <div>
+          <sub class="success"> <%= success %> </sub>
+        </div>
+        <% } %> <% if(error) { %>
+        <div>
+          <sub class="error"> <%= error %> </sub>
+        </div>
+        <% } %>
+
+        <input type="submit" value="Send Reset Link" />
+      </form>
+    </div>
+  </body>
+</html>

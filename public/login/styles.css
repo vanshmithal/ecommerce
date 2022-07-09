@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body > div {
+  border: 1px solid black;
+  padding: 30px;
+}
+
+body > div > h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form > input {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: rgb(74, 197, 74);
+}
+
+#forgotPass {
+  text-align: center;
+}
