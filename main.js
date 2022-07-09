@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const hostname = '0.0.0.0'
+const hostname = 'localhost'
 const port = 3000
 
 //db initialized!
